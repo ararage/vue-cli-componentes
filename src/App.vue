@@ -17,18 +17,18 @@ export default {
   },
   data () {
     return {
-      titulo:'* Lista de tareas *',
+      titulo: '* Lista de tareas *',
       tareas: [
         {
-          texto:'Aprende Vue.js',
+          texto: 'Aprende Vue.js',
           terminada: false
         },
         {
-          texto:'Aprende Angular',
+          texto: 'Aprende Angular',
           terminada: false
         },
         {
-          texto:'Aprende Ionic',
+          texto: 'Aprende Ionic',
           terminada: false
         }
       ]

@@ -6,7 +6,7 @@
                 class="form-control"
                 v-on:keyup.enter="agregarTarea">
         <span class="input-group-btn">
-            <button 
+            <button
                 type="button"
                 v-on:click="agregarTarea"
                 class="btn btn-primary">
@@ -17,23 +17,23 @@
 </template>
 <script>
 export default {
-    data () {
-        return {
-            nuevaTarea: ''
+  data () {
+    return {
+      nuevaTarea: ''
+    }
+  },
+  props: ['tareas'],
+  methods: {
+    agregarTarea () {
+        var texto = this.nuevaTarea.trim()
+        if(texto){
+            this.tareas.push({
+                texto: texto,
+                terminada: false
+            })
         }
-    },
-    props:['tareas'],
-    methods: {
-        agregarTarea () {
-            var texto = this.nuevaTarea.trim()
-            if(texto){
-                this.tareas.push({
-                    texto: texto,
-                    terminada: false
-                })
-            }
-            this.nuevaTarea = '';
-        }
-    } 
+        this.nuevaTarea = '';
+    }
+  } 
 }
 </script>
