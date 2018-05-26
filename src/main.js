@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
+//  Se encarga de la comunicación de información entre los componentes (un servicio)
+export var bus = new Vue()
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

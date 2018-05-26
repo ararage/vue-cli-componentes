@@ -2,7 +2,13 @@
   <div id="app" class="container">
     <div class="jumbotron">
       <titulo :titulo="titulo"></titulo>
-      <nueva-tarea :tareas="tareas"></nueva-tarea>
+      <!--<titulo></titulo>-->
+      <!-- v-on recibe el evento del componente nueva-tarea,
+      y recibe el evento (1) del mismo componente-->
+      <!--<nueva-tarea :tareas="tareas" v-on:incrementarContador="numTareas += $event"></nueva-tarea>-->
+      <nueva-tarea  :tareas="tareas"
+                    :actualizarContador="actualizarContador"></nueva-tarea>
+      <lista-tareas :tareas="tareas"></lista-tareas>
     </div>
   </div>
 </template>
@@ -10,14 +16,17 @@
 <script>
 import Titulo from './components/Titulo.vue'
 import NuevaTarea from './components/NuevaTarea.vue'
+import ListaTareas from './components/ListaTareas.vue'
 export default {
   components: {
     Titulo,
-    NuevaTarea
+    NuevaTarea,
+    ListaTareas
   },
   data () {
     return {
       titulo: '* Lista de tareas *',
+      //  numTareas: 3,
       tareas: [
         {
           texto: 'Aprende Vue.js',
@@ -32,6 +41,11 @@ export default {
           terminada: false
         }
       ]
+    }
+  },
+  methods: {
+    actualizarContador () {
+      this.numTareas++
     }
   }
 }
