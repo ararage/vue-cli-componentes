@@ -39,7 +39,8 @@ export default {
         //  Llamamos a la función recibida
         //  this.actualizarContador()
         //  Emitimos el evento a través del bus
-        bus.$emit('actualizarContador', this.tareas.length)
+        //  bus.$emit('actualizarContador', this.tareas.length)
+        bus.actualizarContador(this.tareas.length)
       }
       this.nuevaTarea = ''
     }
@@ -47,7 +48,8 @@ export default {
   //  Emitimos con el gancho de ciclo de vida al crearse el componente el numero de tareas para
   //  que pinte el tamaño inicial del arreglo al titulo
   created () {
-    bus.$emit('actualizarContador', this.tareas.length)
+    //  bus.$emit('actualizarContador', this.tareas.length)
+    bus.actualizarContador(this.tareas.length)
   }
 }
 </script>

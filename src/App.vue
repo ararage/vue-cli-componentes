@@ -6,8 +6,7 @@
       <!-- v-on recibe el evento del componente nueva-tarea,
       y recibe el evento (1) del mismo componente-->
       <!--<nueva-tarea :tareas="tareas" v-on:incrementarContador="numTareas += $event"></nueva-tarea>-->
-      <nueva-tarea  :tareas="tareas"
-                    :actualizarContador="actualizarContador"></nueva-tarea>
+      <nueva-tarea  :tareas="tareas"></nueva-tarea>
       <lista-tareas :tareas="tareas"></lista-tareas>
     </div>
   </div>
